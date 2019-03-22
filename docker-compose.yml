@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  cmaster:
+    build: .
+    tty: true
+    container_name: consul-master
+    hostname: consul-master
+    ports:
+      - "8500:8500"
+      - "8080:80"
+
+  cagent1:
+    build: .
+    tty: true
+    container_name: consul-client1
+    hostname: consul-client1
+
+  cagent2:
+    build: .
+    tty: true
+    container_name: consul-client2
+    hostname: consul-client2
